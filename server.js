@@ -5,6 +5,7 @@ import PersonRoute from './routes/PersonRoute.js';
 import menuItemRoutes from './routes/menuItemsRoutes.js';
 app.use( express.json() ); //* req.body
 
+//? Hello World
 
 app.use( '/person', PersonRoute );
 
