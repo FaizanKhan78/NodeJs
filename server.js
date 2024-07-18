@@ -16,7 +16,7 @@ app.use( '/menuItems', menuItemRoutes );
 
 const PORT = process.env.PORT;
 
-app.listen( PORT, () =>
+app.listen( PORT || 9000, () =>
 {
   console.log( "Server is Running at Port 9000" );
 } );
