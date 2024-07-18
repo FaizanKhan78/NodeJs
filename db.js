@@ -1,8 +1,10 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+dotenv.config();
 //* Define the MongoDB connection URL
 
 
-const mongoURL = "mongodb://localhost:27017/hotels";
+const mongoURL = process.env.mongoDBURL;
 
 
 mongoose.connect( mongoURL );
@@ -16,15 +18,15 @@ export const db = mongoose.connection;
 //*  Define the Listeners for database Connection
 db.on( "connected", () =>
 {
- console.log( "Connected To Data Base" );
+  console.log( "Connected To Data Base" );
 } );
 
 db.on( "error", ( error ) =>
 {
- console.log( "Connection Error", error );
+  console.log( "Connection Error", error );
 } );
 
 db.on( "disconnected", () =>
 {
- console.log( "Disconnected To Data Base" );
+  console.log( "Disconnected To Data Base" );
 } );
