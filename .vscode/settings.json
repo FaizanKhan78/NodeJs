@@ -1,0 +1,16 @@
+{
+  "editor.fontFamily": "hack",
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "line",
+  "editor.wordWrap": "on",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "diffEditor.codeLens": true,
+  "diffEditor.experimental.showMoves": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSurroundingLines": 1,
+  "editor.cursorWidth": 0,
+  "diffEditor.hideUnchangedRegions.enabled": true
+}
