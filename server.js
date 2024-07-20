@@ -4,15 +4,24 @@ import { db } from "./db.js";
 import PersonRoute from './routes/PersonRoute.js';
 import menuItemRoutes from './routes/menuItemsRoutes.js';
 app.use( express.json() ); //* req.body
-// require( 'dotenv' ).config();
+import passport from 'passport';
 import dotenv from 'dotenv';
+import { localAuthMiddleWare } from "./auth.js";
 dotenv.config();
 
 //? Hello World
 
-app.use( '/person', PersonRoute );
+const logRequest = ( req, res, next ) =>
+{
+  console.log( `[${ new Date().toLocaleString() }] Request Made to ${ req.originalUrl }` );
+  next();
+};
 
-app.use( '/menuItems', menuItemRoutes );
+app.use( passport.initialize() );
+
+app.use( '/person', localAuthMiddleWare, logRequest, PersonRoute );
+
+app.use( '/menuItems', localAuthMiddleWare, menuItemRoutes );
 
 const PORT = process.env.PORT;
 

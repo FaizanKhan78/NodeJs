@@ -3,8 +3,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 //* Define the MongoDB connection URL
 
+const mongoURL = process.env.mongo_BD_LOCAL_URL;
 
-const mongoURL = process.env.mongoDBURL;
+// const mongoURL = process.env.mongoDBURL;
 
 
 mongoose.connect( mongoURL );

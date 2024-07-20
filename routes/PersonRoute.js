@@ -20,8 +20,6 @@ router.post( '/', async ( req, res ) =>
 
     console.log( "Data Saved" );
 
-    console.log( response );
-
     res.status( 200 ).json( response );
 
   } catch ( error )
